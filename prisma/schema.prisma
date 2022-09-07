@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -8,4 +5,67 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model cards {
+  id              Int        @id @default(autoincrement())
+  user_id         Int
+  title           String
+  number          String
+  name            String
+  security_code   String
+  expiration_date String
+  password        String
+  isVirtual       Boolean
+  type            card_types
+  created_at      DateTime   @default(now()) @db.Timestamp(6)
+  users           users      @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model credentials {
+  id         Int      @id @default(autoincrement())
+  user_id    Int
+  title      String
+  url        String
+  user_name  String
+  password   String
+  created_at DateTime @default(now()) @db.Timestamp(6)
+  users      users    @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model secure_notes {
+  id         Int      @id @default(autoincrement())
+  user_id    Int
+  title      String
+  note       String
+  created_at DateTime @default(now()) @db.Timestamp(6)
+  users      users    @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model users {
+  id           Int            @id @default(autoincrement())
+  email        String         @unique @db.VarChar(120)
+  password     String
+  token        String?
+  created_at   DateTime       @default(now()) @db.Timestamp(6)
+  cards        cards[]
+  credentials  credentials[]
+  secure_notes secure_notes[]
+  wifis        wifis[]
+}
+
+model wifis {
+  id         Int      @id @default(autoincrement())
+  user_id    Int
+  title      String
+  name_wifi  String
+  password   String
+  created_at DateTime @default(now()) @db.Timestamp(6)
+  users      users    @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+enum card_types {
+  credit
+  debit
+  both
 }
