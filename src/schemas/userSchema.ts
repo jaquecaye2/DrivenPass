@@ -1,11 +1,8 @@
 import joi from "joi";
 
-const signInSchema = joi.object({
+const userSchema = joi.object({
   email: joi.string().email().required(),
-  password: joi
-    .string()
-    .regex(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{10,}$/)
-    .required(),
+  password: joi.string().min(10).required(),
 });
 
-export default signInSchema;
+export default userSchema;
