@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx prisma generate",
+    "build": "npx prisma migrate deploy",
     "start": "ts-node src/index.ts",
     "dev": "nodemon src/index.ts"
   },
