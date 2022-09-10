@@ -12,5 +12,5 @@ router.post("/wifi", validateUser, validateSchema(wifiSchema), createWifis);
 router.get("/wifi", validateUser, showWifis);
 
 router.delete("/wifi/:id", validateUser, deleteWifis)
-
+//
 export default router
