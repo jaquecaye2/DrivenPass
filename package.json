@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "gerar prisma",
+    "build": "npx prisma generate",
     "start": "ts-node src/index.ts",
-    "dev": "nodemon src/index.ts",
-    "prepare": "npx prisma generate"
+    "dev": "nodemon src/index.ts"
   },
   "author": "",
   "license": "ISC",
