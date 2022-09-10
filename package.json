@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "gerar prisma",
     "start": "ts-node src/index.ts",
     "dev": "nodemon src/index.ts",
     "prepare": "npx prisma generate"
