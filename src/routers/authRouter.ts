@@ -12,5 +12,5 @@ router.post("/signup", validateSchema(userSchema), signup);
 router.post("/signin", validateSchema(userSchema), signin);
 
 router.delete("/logout", validateUser, logout)
-
+//
 export default router
