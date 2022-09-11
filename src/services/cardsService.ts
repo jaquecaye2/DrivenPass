@@ -6,7 +6,7 @@ import {
   insertCard,
   findByTitle,
   deleteById,
-  findAll,
+  findAllCards,
   findById,
 } from "../repositories/cardsRepository";
 import { TypeCardData } from "../types/cardTypes";
@@ -41,7 +41,7 @@ export async function createCard(cardData: TypeCardData) {
 
 export async function findCard(user: users, id: number | undefined) {
   if (!id) {
-    const result: cards[] = await findAll(user.id);
+    const result: cards[] = await findAllCards(user.id);
 
     if (!result) {
       throw {

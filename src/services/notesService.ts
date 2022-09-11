@@ -6,7 +6,7 @@ import {
   insertNote,
   findByTitle,
   deleteById,
-  findAll,
+  findAllNotes,
   findById
 } from "../repositories/notesRepository";
 
@@ -31,7 +31,7 @@ export async function createNote(noteData: TypeNoteData) {
 
 export async function findNote(user: users, id: number | undefined) {
   if (!id) {
-    const result: secure_notes[] = await findAll(user.id);
+    const result: secure_notes[] = await findAllNotes(user.id);
 
     if (!result) {
       throw {

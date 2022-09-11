@@ -7,6 +7,11 @@ export async function findByEmail(email: string) {
   return result;
 }
 
+export async function findById(id: number) {
+  const result = await prisma.users.findUnique({ where: { id } });
+  return result;
+}
+
 export async function findByToken(token: string) {
   const result = await prisma.users.findFirst({ where: { token } });
   return result;

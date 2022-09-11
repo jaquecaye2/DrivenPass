@@ -13,7 +13,7 @@ export async function findByTitle(title: string, user_id: number) {
   return result;
 }
 
-export async function findAll(user_id: number) {
+export async function findAllCredentials(user_id: number) {
   const result = await prisma.credentials.findMany({ where: { user_id } });
   return result;
 }

@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import { TypeCredentialData } from "../types/credentialTypes";
 import {
   deleteById,
-  findAll,
+  findAllCredentials,
   findById,
   findByTitle,
   insertCredential,
@@ -45,7 +45,7 @@ export async function createCredential(credentialData: TypeCredentialData) {
 
 export async function findCredentials(user: users, id: number | undefined) {
   if (!id) {
-    const result = await findAll(user.id);
+    const result = await findAllCredentials(user.id);
 
     if (!result) {
       throw {

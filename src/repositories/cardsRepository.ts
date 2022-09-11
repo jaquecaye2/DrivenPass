@@ -12,7 +12,7 @@ export async function findByTitle(title: string, user_id: number) {
   return result;
 }
 
-export async function findAll(user_id: number) {
+export async function findAllCards(user_id: number) {
   const result = await prisma.cards.findMany({ where: { user_id } });
   return result;
 }

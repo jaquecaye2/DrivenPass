@@ -7,7 +7,7 @@ import {
   insertWifi,
   findByTitle,
   deleteById,
-  findAll,
+  findAllWifi,
   findById,
 } from "../repositories/wifisRepository";
 import { TypeWifiData } from "../types/wifiTypes";
@@ -28,7 +28,7 @@ export async function createWifi(wifiData: TypeWifiData) {
 
 export async function findWifi(user: users, id: number | undefined) {
   if (!id) {
-    const result: wifis[] = await findAll(user.id);
+    const result: wifis[] = await findAllWifi(user.id);
 
     if (!result) {
       throw {
