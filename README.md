@@ -476,4 +476,3 @@ A resposta da requisição virá no seguinte formato:
 <img style="border-radius: 200" src="https://avatars.githubusercontent.com/u/102393976?s=400&u=aba5f19bf20b58d80146b343326cdb4fac491351&v=4" width="100" alt=""/>          |           <b>Jaqueline Caye</b>
 
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=for-the-badge&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jaqueline-caye-614449137/)](https://www.linkedin.com/in/jaqueline-caye-614449137/)
-[![Instagram Badge](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white&link=https://www.instagram.com/jaquecaye/?hl=pt)](https://www.instagram.com/jaquecaye/?hl=pt)
