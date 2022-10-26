@@ -159,11 +159,21 @@ A resposta da requisição virá no seguinte formato:
 [
   {
     "id": 1,
-    "number": 1
+    "user_id": 1,
+    "title": "Credencial Instagram",
+    "url": "https://www.instagram.com/",
+    "user_name": "Fulano de tal",
+    "password": "0123456789",
+    "created_at": "2022-09-11T22:02:52.654Z"
   },
   {
-    "id": 2,
-    "number": 2
+    "id": 1,
+    "user_id": 1,
+    "title": "Credencial Facebook",
+    "url": "https://www.facebook.com",
+    "user_name": "Fulano",
+    "password": "456789",
+    "created_at": "2022-10-26T19:46:01.413Z"
   }
 ]
 ```
@@ -177,16 +187,15 @@ O "id" passado na rota é o id da credencial desejada.
 A resposta da requisição virá no seguinte formato:
 
 ```bash
-[
-  {
-    "id": 1,
-    "number": 1
-  },
-  {
-    "id": 2,
-    "number": 2
-  }
-]
+{
+  "id": 1,
+  "user_id": 1,
+  "title": "Credencial Instagram",
+  "url": "https://www.instagram.com/",
+  "user_name": "Fulano de tal",
+  "password": "0123456789",
+  "created_at": "2022-09-11T22:02:52.654Z"
+}
 ```
 
 ➡️ <span style="color:yellow"> **DELETE** </span> `/credentials/:id`
@@ -198,16 +207,7 @@ O "id" passado na rota é o id da credencial desejada.
 A resposta da requisição virá no seguinte formato:
 
 ```bash
-[
-  {
-    "id": 1,
-    "number": 1
-  },
-  {
-    "id": 2,
-    "number": 2
-  }
-]
+Credencial deletada com sucesso
 ```
 
 ### 📝 Fluxo de cadastro, busca e deleção de notas seguras
@@ -244,11 +244,24 @@ A resposta da requisição virá no seguinte formato:
 [
   {
     "id": 1,
-    "number": 1
+    "user_id": 1,
+    "title": "Nota 1",
+    "note": "Descrição da nota 1",
+    "created_at": "2022-09-10T21:45:53.997Z"
   },
   {
     "id": 2,
-    "number": 2
+    "user_id": 1,
+    "title": "Nota 2",
+    "note": "Descrição da nota 2",
+    "created_at": "2022-09-11T22:09:10.976Z"
+  },
+  {
+    "id": 3,
+    "user_id": 1,
+    "title": "Nota 3",
+    "note": "Descrição da nota 3",
+    "created_at": "2022-10-26T19:50:10.831Z"
   }
 ]
 ```
@@ -262,16 +275,13 @@ O "id" passado na rota é o id da nota desejada.
 A resposta da requisição virá no seguinte formato:
 
 ```bash
-[
-  {
-    "id": 1,
-    "number": 1
-  },
-  {
-    "id": 2,
-    "number": 2
-  }
-]
+{
+  "id": 1,
+  "user_id": 1,
+  "title": "Nota 1",
+  "note": "Descrição da nota 1",
+  "created_at": "2022-09-10T21:45:53.997Z"
+}
 ```
 
 ➡️ <span style="color:yellow"> **DELETE** </span> `/notes/:id`
@@ -283,16 +293,7 @@ O "id" passado na rota é o id da nota desejada.
 A resposta da requisição virá no seguinte formato:
 
 ```bash
-[
-  {
-    "id": 1,
-    "number": 1
-  },
-  {
-    "id": 2,
-    "number": 2
-  }
-]
+Nota deletada com sucesso
 ```
 
 ### 💳 Fluxo de cadastro, busca e deleção de cartões
@@ -335,11 +336,29 @@ A resposta da requisição virá no seguinte formato:
 [
   {
     "id": 1,
-    "number": 1
+    "user_id": 1,
+    "title": "Cartão de débito Mastercard",
+    "number": "1234567890123456",
+    "name": "FULANO S. SILVA",
+    "security_code": "013",
+    "expiration_date": "12/25",
+    "password": "2567",
+    "isVirtual": false,
+    "type": "debit",
+    "created_at": "2022-09-11T21:58:38.212Z"
   },
   {
     "id": 2,
-    "number": 2
+    "user_id": 1,
+    "title": "Cartão de crédito Mastercard",
+    "number": "0124478914567894",
+    "name": "CLICLANO S. PEREIRA",
+    "security_code": "058",
+    "expiration_date": "05/29",
+    "password": "1234",
+    "isVirtual": false,
+    "type": "credit",
+    "created_at": "2022-10-26T19:52:50.901Z"
   }
 ]
 ```
@@ -353,16 +372,19 @@ O "id" passado na rota é o id do cartão desejado.
 A resposta da requisição virá no seguinte formato:
 
 ```bash
-[
-  {
-    "id": 1,
-    "number": 1
-  },
-  {
-    "id": 2,
-    "number": 2
-  }
-]
+{
+  "id": 1,
+  "user_id": 1,
+  "title": "Cartão de débito Mastercard",
+  "number": "1234567890123456",
+  "name": "FULANO S. SILVA",
+  "security_code": "013",
+  "expiration_date": "12/25",
+  "password": "2567",
+  "isVirtual": false,
+  "type": "debit",
+  "created_at": "2022-09-11T21:58:38.212Z"
+}
 ```
 
 ➡️ <span style="color:yellow"> **DELETE** </span> `/cards/:id`
@@ -374,16 +396,7 @@ O "id" passado na rota é o id do cartão desejado.
 A resposta da requisição virá no seguinte formato:
 
 ```bash
-[
-  {
-    "id": 1,
-    "number": 1
-  },
-  {
-    "id": 2,
-    "number": 2
-  }
-]
+Cartão deletado com sucesso
 ```
 
 ### 📶 Fluxo de cadastro, busca e deleção de redes wi-fi
@@ -421,11 +434,19 @@ A resposta da requisição virá no seguinte formato:
 [
   {
     "id": 1,
-    "number": 1
+    "user_id": 1,
+    "title": "Rede apartamento 1102",
+    "name_wifi": "Claro apto_1102",
+    "password": "58963",
+    "created_at": "2022-09-11T22:05:05.601Z"
   },
   {
     "id": 2,
-    "number": 2
+    "user_id": 1,
+    "title": "Rede vizinho",
+    "name_wifi": "Rede Claro 350",
+    "password": "senha-segura",
+    "created_at": "2022-10-26T19:55:48.404Z"
   }
 ]
 ```
@@ -439,16 +460,14 @@ O "id" passado na rota é o id da rede wi-fi desejada.
 A resposta da requisição virá no seguinte formato:
 
 ```bash
-[
-  {
-    "id": 1,
-    "number": 1
-  },
-  {
-    "id": 2,
-    "number": 2
-  }
-]
+{
+  "id": 1,
+  "user_id": 1,
+  "title": "Rede apartamento 1102",
+  "name_wifi": "Claro apto_1102",
+  "password": "58963",
+  "created_at": "2022-09-11T22:05:05.601Z"
+}
 ```
 
 ➡️ <span style="color:yellow"> **DELETE** </span> `/wifi/:id`
@@ -460,16 +479,7 @@ O "id" passado na rota é o id da rede wi-fi desejada.
 A resposta da requisição virá no seguinte formato:
 
 ```bash
-[
-  {
-    "id": 1,
-    "number": 1
-  },
-  {
-    "id": 2,
-    "number": 2
-  }
-]
+Wifi deletado com sucesso
 ```
 
 ### 👩🏻 Autora
