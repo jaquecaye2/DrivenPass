@@ -11,10 +11,6 @@
 	🚧 Concluído 🚀 🚧
 </h4>
 
-<h4 align="center">
-	🌐 Link para o deploy: 🌐
-</h4>
-
 ### 💻 Sobre o projeto
 Navegar na internet pode ser uma atividade muito divertida, mas ao mesmo tempo, muito perigosa. Inúmeros estudos e levantamentos (nacionais e internacionais) mostram que o número de golpes virtuais não para de crescer. O que levanta a questão: como nos proteger?
 
